@@ -1,9 +1,10 @@
 import flask
 from flask import request, jsonify
 from record_methods import create_record, read_record, update_record, delete_record
-
+from flask_cors import CORS
 
 app = flask.Flask(__name__)
+CORS(app)
 app.config["DEBUG"] = True
 
 @app.route('/job', methods=['GET','POST', 'PUT', 'DELETE'])
